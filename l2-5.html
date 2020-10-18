@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l2-5</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function plus(a, b) {
+            return a + b;
+        }
+        function minus(a, b) {
+            return a - b;
+        }
+        function multiply(a, b) {
+            return a * b;
+        }
+        function divide(a, b) {
+            return a / b;
+        }
+        
+        function mathOperation(arg1, arg2, operation) {
+            let result = 0;
+            switch(operation) {
+                case "+":
+                    result = plus(arg1, arg2);
+                    break;
+                case "-":
+                    result = minus(arg1, arg2);
+                    break;
+                case "*":
+                    result = multiply(arg1, arg2);
+                    break;
+                case "/":
+                    result = divide(arg1, arg2);
+                    break
+            }
+            return result;
+        }
+        
+        let arg1 = +prompt("Введите первое число");
+        let arg2 = +prompt("Введите второе число");
+        let operation = prompt("Введите действие, которое следует выполнить (+, -, *, /)");
+        let result = mathOperation(arg1, arg2, operation);
+        alert("Результат: " + result);
+    </script>
+</body>
+</html>
