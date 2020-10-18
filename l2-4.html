@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l2-4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function plus(a, b) {
+            return a + b;
+        }
+        function minus(a, b) {
+            return a - b;
+        }
+        function multiply(a, b) {
+            return a * b;
+        }
+        function divide(a, b) {
+            return a / b;
+        }
+        
+        let a = +prompt("Введите первое число");
+        let b = +prompt("Введите второе число");
+        let result1 = plus(a, b);
+        alert("Sum = " + result1);
+        let result2 = minus(a, b);
+        alert("Minus = " + result2);
+        let result3 = multiply(a, b);
+        alert("Mult = " + result3);
+        let result4 = divide(a, b);
+        alert("Div = " + result4);
+    </script>
+</body>
+</html>

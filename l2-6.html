@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l2-6</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let num = prompt("Какую сумму зачислить?"); // число пользователя
+        let numLength = num.length;     // длина числа
+        let lastNum = num.charAt(numLength - 1);    // последняя цифра
+        let last2Num = num.charAt(numLength - 2);   // предпоследняя цифра
+        if (lastNum == "1" && last2Num !="1") {
+            alert("Ваша сумма в " + num + " рубль успешно зачисленна.");
+        } else if ((lastNum == 2 || lastNum == 3 || lastNum == 4) && (last2Num != "1")) {
+            alert("Ваша сумма в " + num + " рубля успешно зачисленна.");
+        } else {
+            alert("Ваша сумма в " + num + " рублей успешно зачисленна.");
+        }
+    </script>
+</body>
+</html>
