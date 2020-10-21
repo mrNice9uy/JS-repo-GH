@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l3-1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        let num = +prompt("Введите число");
+        let result = 0;
+        for (let i = 0; i <= num; i++) {
+            
+            if (i == 0) {
+                result += " - это ноль" +'\r\n';
+            } else if (i % 2 == 1) {
+                result += i + " - нечетное число" +'\r\n';
+            } else if (i % 2 == 0) {
+                result += i + " - четное число" +'\r\n';
+            }
+        }        
+        alert(result);
+        console.log(result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l3-3</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        
+        // закомментированные строки - если нужно хранить цену со скидкой в новой переменной
+        //let newPrice = null;
+        const products = [
+            {
+                id: 3,
+                price: 200,
+            },
+            {
+                id: 4,
+                price: 900,
+            },
+            {
+                id: 1,
+                price: 1000,
+            },
+        ];
+        products.forEach(function(discountpr) {
+            discountpr.price = 0.85 * discountpr.price;
+            console.log(discountpr.price);
+            
+            /*
+            newPrice = 0.85 * discountpr.price;
+            console.log(newPrice);
+            */
+        });
+    </script>
+</body>
+</html>
