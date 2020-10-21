@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l3-4</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: [
+                "1.jpg",
+                "2.jpg",
+                ]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            },
+            {
+                id: 10,
+                price: 26,
+                photos: [
+                    "3.jpg"
+                ]
+            },
+            {
+                id: 8,
+                price: 78,
+            },
+        ];
+        
+        let productWizPh = products.filter(function(img) {
+            if (img.hasOwnProperty('photos') && img.photos.length != 0) {
+                console.log(img.photos.length); 
+                return img;
+            }
+        })
+        
+        let allPrice = [];
+        for (let i = 0; i < products.length; i++) {
+            console.log(products[i].price);
+            allPrice[i] = products[i].price; 
+        }
+        allPrice.sort(function(a, b) {
+            return a - b;
+        })
+        
+        console.log(productWizPh); // товары с фото
+        console.log(allPrice); // массив отсортированных цен
+    </script>
+</body>
+</html>
