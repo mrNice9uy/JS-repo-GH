@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l4-1.2-es5</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        
+        // создание конструктора Post
+        function Post(author, text, date) { 
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+        
+        // создание метода  edit
+        Post.prototype.edit = function(newText) {
+            this.text = newText;
+        }
+        
+        // создание конструктора AttachedPost
+        function AttachedPost(author, text, date) {
+            Post.call(this, author,text, date);
+            this.highlighted = false;
+        }
+        
+        AttachedPost.prototype = Object.create(Post.prototype); // создание промежуточного объекта, чтобы не было конфликтов при изменении
+        AttachedPost.prototype.constructor = AttachedPost;  // добавление правильного конструктора
+        
+        // создание метода  makeTextHighlighted
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+        }
+        
+        const post1 = new Post('User1', 'hello','24.10.2020');
+        post1.edit('hi');
+        const post2 = new Post('User2', 'world','24.10.2020');
+        post2.edit('everybody');
+        const post3 = new AttachedPost('User3','test','24.10.2020');
+        post3.makeTextHighlighted();    // вызов собственного метода
+        post3.edit('qwerty');   // вызов наследованного метода
+    </script>
+</body>
+</html>
