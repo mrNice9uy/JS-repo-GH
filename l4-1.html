@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l4-1</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        
+        class Convert {
+            constructor(num) {
+                this.num = num;
+                this.units = null;
+                this.tens = null;
+                this.hundreds = null;
+            }
+            
+            decomposeNum(num) {
+                if (this.num < 0 || !Number.isInteger(this.num)) {
+                    console.log('Данное число не соответсвует заданному диапозону!');
+                } else if (this.num <= 9 && this.num > 1){
+                    this.units = this.num;  
+                } else if (this.num <= 999) {
+                    this.units = Math.floor(this.num % 10);
+                    this.tens = Math.floor(this.num / 10 % 10);
+                    this.hundreds = Math.floor(this.num / 100 % 10);
+                } else {
+                    this.num = 0;
+                    console.log('Данное число не соответсвует заданному диапозону!');
+                }
+            }
+        }
+        
+        let num = +prompt('Введите целое число от 0 до 999');
+        const num1 = new Convert(num);
+        num1.decomposeNum(num);
+        console.log(num1);
+    </script>
+</body>
+</html>

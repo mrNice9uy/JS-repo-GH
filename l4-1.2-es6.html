@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>l4-1.2-es6</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        
+        // class порождает объект Post
+        class Post {
+            // constructor создает свойства
+            constructor(author, text, date) {
+                this.author = author;
+                this.text = text;
+                this.date = date;
+            }
+            // метод объекта Post
+            edit(newText) {
+            this.text = newText;
+            }
+        }
+        
+        // AttachedPost наследуется (extends) от Post с теми же свойствами
+        class AttachedPost extends Post {
+            constructor(author, text, date) {
+                super(author, text, date);  // спомощью "super" вызываем родительский конструктор (Post)
+                this.highlighted = false;   // собственное свойство для AttachedPost
+            }
+            
+            // собственный метод
+            makeTextHighlighted() {
+                this.highlighted = true;
+            }
+        }
+        
+        const post1 = new Post('User1', 'hello','24.10.2020');
+        post1.edit('hi');
+        const post2 = new Post('User2', 'world','24.10.2020');
+        post2.edit('everybody');
+        const post3 = new AttachedPost('User3','test','24.10.2020');
+        post3.makeTextHighlighted();    // вызов собственного метода
+        post3.edit('qwerty');   // вызов наследованного метода
+    </script>
+</body>
+</html>
